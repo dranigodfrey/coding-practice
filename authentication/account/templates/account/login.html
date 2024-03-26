@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			{% if not user.is_authenticated %}
+			<h1>Sign In</h1>
+			<form action="" method="POST">
+				{% csrf_token %}
+				<div>
+					<label for="username" class="form-label">
+						User Name:
+						<input
+							type="text"
+							id="username"
+							name="username"
+							class="form-control"
+						/>
+					</label>
+				</div>
+				<br />
+				<div>
+					<label for="password" class="form-label">
+						Password:
+						<input
+							type="password"
+							id="password"
+							name="password"
+							class="form-control"
+						/>
+					</label>
+				</div>
+				<br />
+				<div>
+					<button type="submit" class="btn btn-primary">
+						Sign in
+					</button>
+				</div>
+			</form>
+			<p>
+				Have no account please,
+				<a href="{% url 'sign_up' %}">sign up</a>
+			</p>
+			<div>
+				<p>
+					<a href="{% url 'reset_password'%}">Forgot password?</a>
+				</p>
+			</div>
+			{% else %}
+			<div class="col-sm-12 mt-5">
+				<h3>You're already signed in!</h3>
+				<h3>
+					<a
+						class="text-decoration-none text-aline-center"
+						href="{% url 'accounts' %}"
+						>Back to Home Page</a
+					>
+				</h3>
+			</div>
+			{% endif %}
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+</div>
+{% endblock %}
