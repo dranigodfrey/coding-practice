@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from employee.forms import EmployeeForm
+# from django.http import HttpResponse
 
 # Create your views here.
 def employee(request):
-    return HttpResponse('Employee Page!')
+    form = EmployeeForm()
+    context  ={
+        'form': form
+    }
+    return render(request, template_name='employee/employee.html', context=context)
