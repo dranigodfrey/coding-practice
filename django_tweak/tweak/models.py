@@ -16,7 +16,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=10)
     last_name = models.CharField(max_length=10)
     dob = models.DateField()
-    sex = models.CharField(max_length=10, choices=SEX, )
+    sex = models.CharField(max_length=10, choices=SEX,)
     hobbie = MultiSelectField(choices=HOBBIE, max_length=125, max_choices = 2, default=None)
 
     def __str__(self) -> str:

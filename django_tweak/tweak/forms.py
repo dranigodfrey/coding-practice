@@ -10,7 +10,7 @@ class EmployeeForm(ModelForm):
         
         widgets = {
             'dob': forms.DateInput(attrs={ 'type': 'date', 'placeholder': 'Date of Birth'}),
-            # 'first_name': forms.TextInput(attrs={'placeholder': 'First Name'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'First Name', 'class':'', }),
             # 'sex': forms.RadioSelect(attrs={'placeholder': ''}),
             # 'hobbie': forms.SelectMultiple(attrs = {'type':' checkbox',})
         }
