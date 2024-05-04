@@ -1,0 +1,68 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tweak</title>
+		{% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+		<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+	</head>
+	<body>
+		<div class="container">
+			<div class="row justify-content-evenly">
+				<div class="col col-6 col-auto">
+					<h3 class="mt-3">Django Crispy Forms</h3>
+
+					{% if messages %}
+						{% for message in messages %}
+							<div class="alert alert-dismissible fade show mt-3 {{ message.tags }}" id="msg" role="alert">
+								{{ message }} 
+								<!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+							</div>
+						{% endfor %}
+					{% endif %}
+
+					<form action=""	method="POST" class="form mt-3">
+						{% csrf_token %}
+						<div class="row">
+							<div class=" col-6 ">
+								{{form.first_name|as_crispy_field}}
+							</div>
+							<div class="col-6 ">
+								{{form.last_name|as_crispy_field}}
+							</div>
+						</div>
+						<div class="">
+							{{form.dob|as_crispy_field}}
+						</div>
+						<div class="">
+							{{form.sex|as_crispy_field}}
+						</div>
+						<div class="">
+							{{form.hobbie|as_crispy_field}}
+						</div>
+						<div class=" btn-submit d-grid col-3 ">
+							<button	type="submit" class="btn btn-dark"> Submit </button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+			
+		</div>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(()=> {
+				// messages timeout for 10 sec
+				setTimeout(()=> {
+					$('#msg').fadeOut('slow');
+				}, 3000); // <-- time in milliseconds, 1000 =  1 sec
+			});
+		</script>
+	</body>
+</html>

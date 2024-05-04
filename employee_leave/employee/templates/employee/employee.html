@@ -1,0 +1,39 @@
+{% load widget_tweaks %}
+<!-- {% load crispy_forms_tags %} -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Employee</title>
+		{% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+		<style>
+			.form-controls {
+				background-color: aquamarine;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<h3>Empoyee</h3>
+					<form action="" method="POST">
+						{% csrf_token %} 
+						{{ form | crispy }}
+						<!-- <div>{% render_field form.employee_firstname%}</div>
+						<div>
+							<label for="user">User Name</label>
+							{%render_field form.user class="form-control" %}
+						</div> -->
+						<input
+							type="submit"
+							value="Add"
+							class="btn btn-primary"
+						/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
