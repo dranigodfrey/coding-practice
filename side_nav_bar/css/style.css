@@ -10,11 +10,16 @@
     border: 1px solid #eee;
 }
 
+/* .side-container{
+    position:fixed;
+    width: auto;
+} */
+
 .sidebar{
     position:absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    min-height: 100dvh;
     width: 80px;
     background-color: #12171e;
     padding: 0.4rem 0.8rem;
