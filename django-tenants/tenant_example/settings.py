@@ -60,7 +60,7 @@ INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in S
 
 TENANT_MODEL = "tenant.Client" # app.Model
 TENANT_DOMAIN_MODEL = "tenant.Domain"  # app.Model
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+# TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 
 MIDDLEWARE = [
@@ -75,6 +75,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tenant_example.urls'
+PUBLIC_SCHEMA_URLCONF = 'tenant_example.urls_public' 
 
 TEMPLATES = [
     {
@@ -156,3 +157,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SHOW_PUBLIC_IF_NO_TENANT_FOUND = True

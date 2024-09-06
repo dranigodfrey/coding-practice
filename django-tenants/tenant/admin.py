@@ -5,4 +5,4 @@ from tenant.models import Client
 
 @admin.register(Client)
 class ClientAdmin(TenantAdminMixin, admin.ModelAdmin):
-        list_display = ('name', 'paid_until')
+        list_display = ('name','schema_name')
