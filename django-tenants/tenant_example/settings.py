@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 SHARED_APPS = (
     'django_tenants',  # mandatory
-    'tenant', # you must list the app where your tenant model resides in
+    'main_tenant', # you must list the app where your tenant model resides in
 
     'django.contrib.contenttypes',
 
@@ -80,7 +80,9 @@ PUBLIC_SCHEMA_URLCONF = 'tenant_example.urls_public'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,6 +117,9 @@ DATABASES = {
 DATABASE_ROUTERS = (
     'django_tenants.routers.TenantSyncRouter',
 )
+
+
+AUTH_USER_MODEL = 'account.TenantUser'
 
 
 # Password validation
@@ -158,3 +163,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SHOW_PUBLIC_IF_NO_TENANT_FOUND = True
+
+
+# AUTHENTICATION_BACKENDS = ("tenant_users.permissions.backend.UserBackend",)
+
+
+# TENANT_USERS_DOMAIN = "localhost"
