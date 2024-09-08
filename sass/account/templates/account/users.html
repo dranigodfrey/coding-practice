@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}account | users{% endblock%}
+{% block heading %}users| {{reqeust.tenant.schema_name }}{% endblock%}
+{% block content %}
+<ol>
+    {% for user in users %}
+    <li>{{ user.username }} ({{ user.email }})</li>
+    {% endfor %}
+</ol>
+{% endblock%}
