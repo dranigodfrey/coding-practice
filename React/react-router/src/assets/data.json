@@ -1,0 +1,28 @@
+{
+	"jobs": [
+		{
+			"id": 1,
+			"title": "React Developer",
+			"salary": 50000,
+			"location": "Lodon UK"
+		},
+		{
+			"id": 2,
+			"title": "Front Developer",
+			"salary": 23000,
+			"location": "Uganda East Africa"
+		},
+		{
+			"id": 3,
+			"title": "Backend Developer",
+			"salary": 760000,
+			"location": "USA"
+		},
+		{
+			"id": 4,
+			"title": "Dev Developer",
+			"salary": 150000,
+			"location": "Kenya"
+		}
+	]
+}
