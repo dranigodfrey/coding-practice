@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>User List</h3>
+    <a href="{% url 'group' %}">Add Group and Permission</a>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Group</th>
+        </thead>
+        <tbody>
+         {% for group in groups %}
+            <tr>
+                <td>{{ group.id}}</td>
+                <td>{{ group.name }}</td>
+                <td><a href="{% url 'group-detail' group.pk %}">View</a></td>
+                <td><a href="{% url 'add_users_to_group' group.pk %}">Add User</a></td>
+                <td><a href="{% url 'group-delete' group.pk %}">delete</a></td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+ 
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Users and Groups</h2>
+<ul>
+    {% for user in users %}
+    <li>
+        <strong>{{ user.username }}</strong>
+        <ul>
+            {% for group in user.groups.all %}
+            <li>{{ group.name }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

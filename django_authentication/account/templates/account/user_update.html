@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Sign Up</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Changes">
+        <p><a href="{% url 'user-detail' object.pk %}">Cancel</a></p> 
+    </form>
+   
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Edit Group: {{ group.name }}</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Changes">
+        <p><a href="{% url 'group-detail' object.pk %}">Cancel</a></p> 
+    </form>
+   
+{% endblock %}

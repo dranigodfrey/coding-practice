@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Group Details </h3>
+<a href="{% url 'group-list' %}">Back to Group List</a>
+<br>
+<p>Name: {{ object.name }}</p>
+<p>Permissions:</p>
+<ul>
+    {% for permission in group.permissions.all %}
+   <li> {{ permission.name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'group-update' object.pk %}">Update Group</a>
+{% endblock %}

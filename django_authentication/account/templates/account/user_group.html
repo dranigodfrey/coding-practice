@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Assign User To Group</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Assign User</button>
+</form>
+  <p><a href="{% url 'user-detail' user.pk%}">Cancel</a></p> 
+{% endblock %}

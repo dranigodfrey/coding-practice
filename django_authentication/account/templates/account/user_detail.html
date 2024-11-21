@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>User Details </h3>
+<a href="{% url 'user-list' %}">Back to User List</a>
+<br>
+<p>Email: {{ object.email }}</p>
+<p>Username: {{ object.username }}</p>
+<p>Role: {{ object.user_role }}</p>
+<p>Last Login: {{ object.last_login }}</p>
+<a href="{% url 'delete-user' object.pk %}">Delete User</a>
+<a href="{% url 'update-user' object.pk %}">Update User</a>
+<a href="{% url 'user_group' object.pk %}">Add User to Group</a>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>User List</h3>
+   
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Group</th>
+        </thead>
+        <tbody>
+         {% for user in users %}
+            <tr>
+                <td>{{ user.id}}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.user_role }}</td>
+                {% for group in user.groups.all %}
+                {% if group %}
+                <td>{{ group.name }}</td>
+                {% else %}
+                <td>No Group</td>
+                {% endif %}
+                {% endfor %}
+                <td><a href="{% url 'user-detail' user.pk %}">View</a>
+               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ 
+{% endblock %}
