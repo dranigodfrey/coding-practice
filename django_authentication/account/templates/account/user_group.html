@@ -4,7 +4,7 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Assign User</button>
+    <button type="submit">Assign Group</button>
 </form>
   <p><a href="{% url 'user-detail' user.pk%}">Cancel</a></p> 
 {% endblock %}

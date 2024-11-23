@@ -3,8 +3,8 @@
 <h2>Add Users to Group</h2>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+   {{ form.as_p }}
+    <button type="submit">Add User</button>
 </form>
 <a href="{% url 'group-list' %}">Back to Groups</a>
 {% endblock %}
