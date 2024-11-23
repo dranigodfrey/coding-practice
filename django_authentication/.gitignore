@@ -108,6 +108,7 @@ media
 
 # Environments 
 .env
+venv
 
 # Visual Studio Code # 
 .vscode/* 
