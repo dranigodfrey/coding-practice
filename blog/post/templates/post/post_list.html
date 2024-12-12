@@ -1,0 +1,14 @@
+<!-- templates/blog/post_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Posts</h1>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'post_new' %}">New Post</a>
+{% endblock %}
