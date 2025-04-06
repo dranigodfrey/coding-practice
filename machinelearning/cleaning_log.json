@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-04-03 15:01:33",
+  "original_shape": [
+    10,
+    9
+  ],
+  "original_columns": [
+    "order_id",
+    "customer_id",
+    "order_date",
+    "product",
+    "quantity",
+    "price",
+    "discount",
+    "shipping_city",
+    "order_status"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "description": "Converted order_date to datetime",
+      "changes": {
+        "mixed_formats_handled": true
+      },
+      "shape_after": [
+        10,
+        9
+      ]
+    },
+    {
+      "step": 2,
+      "description": "Handled missing values",
+      "changes": {
+        "missing_customer_ids_replaced": 1,
+        "missing_discounts_set_to_zero": 4,
+        "missing_cities_marked_unknown": 1
+      },
+      "shape_after": [
+        10,
+        9
+      ]
+    },
+    {
+      "step": 3,
+      "description": "Standardized values",
+      "changes": {
+        "products_title_cased": true,
+        "city_names_standardized": [
+          "NYC",
+          "SF"
+        ],
+        "status_lowercased": true
+      },
+      "shape_after": [
+        10,
+        9
+      ]
+    },
+    {
+      "step": 4,
+      "description": "Validated data types",
+      "changes": {
+        "quantity_type": "int8",
+        "price_type": "float32"
+      },
+      "shape_after": [
+        10,
+        9
+      ]
+    },
+    {
+      "step": 5,
+      "description": "Identified outliers",
+      "changes": {
+        "outliers_found": 

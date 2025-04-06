@@ -1,0 +1,11 @@
+order_id,customer_id,order_date,product,quantity,price,discount,shipping_city,order_status
+1001,CUST-001,2023-05-15,Smartphone,1,799.99,10%,New York,Delivered
+1002,CUST-002,05/18/2023,Laptop,1,1299.99,,Los Angeles,Shipped
+1003,CUST-003,2023-05-20,Headphones,2,99.50,5%,Chicago,Processing
+1004,,2023-05-22,Tablet,1,349.99,15%,,Cancelled
+1005,CUST-005,2023-05-25,Smartwatch,1,199.99,20%,Boston,Delivered
+1006,CUST-002,2023-05-25,Phone Case,3,29.99,,Los Angeles,Shipped
+1007,CUST-006,2023-05-28,Bluetooth Speaker,1,79.99,10%,San Francisco,Delivered
+1008,CUST-007,2023-05-30,Keyboard,1,49.99,,Miami,Processing
+1009,CUST-003,2023-06-01,Mouse,2,24.99,5%,Chicago,Shipped
+1010,CUST-008,2023-06-03,Monitor,1,199.99,,New York,Delivered

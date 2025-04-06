@@ -1,0 +1,11 @@
+order_id,customer_id,order_date,product,quantity,price,discount,shipping_city,order_status,order_total,is_outlier,order_dow,customer_segment
+1001,CUST-001,2023-05-15,Smartphone,1,799.99,0.1,New York,delivered,719.9909912109375,False,Monday,medium
+1002,CUST-002,2023-05-18,Laptop,1,1299.99,0.0,Los Angeles,shipped,1299.989990234375,False,Thursday,medium
+1003,CUST-003,2023-05-20,Headphones,2,99.5,0.05,Chicago,processing,189.04999999999998,False,Saturday,low
+1004,ANON-004,2023-05-22,Tablet,1,349.99,0.15,Unknown,cancelled,297.4914916992187,False,Monday,low
+1005,CUST-005,2023-05-25,Smartwatch,1,199.99,0.2,Boston,delivered,159.99200439453125,False,Thursday,low
+1006,CUST-002,2023-05-25,Phone Case,3,29.99,0.0,Los Angeles,shipped,89.97000122070312,False,Thursday,medium
+1007,CUST-006,2023-05-28,Bluetooth Speaker,1,79.99,0.1,San Francisco,delivered,71.99099807739258,False,Sunday,low
+1008,CUST-007,2023-05-30,Keyboard,1,49.99,0.0,Miami,processing,49.9900016784668,False,Tuesday,low
+1009,CUST-003,2023-06-01,Mouse,2,24.99,0.05,Chicago,shipped,47.480999565124506,False,Thursday,low
+1010,CUST-008,2023-06-03,Monitor,1,199.99,0.0,New York,delivered,199.99000549316406,False,Saturday,low
