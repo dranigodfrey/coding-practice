@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "jupyter": "^0.0.0",
-    "lab": "^18.0.2"
-  }
-}
