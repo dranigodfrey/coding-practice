@@ -1,0 +1,49 @@
+name: docker-django-app
+services:
+  web-app:
+    build: .
+    image: docker-django-image
+    container_name: docker-django-container
+    # command: gunicorn docker.wsgi:application --bind 0.0.0.0:8000
+    command: sh -c "python manage.py collectstatic --noinput && gunicorn docker.wsgi:application --bind 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+      - ./static:/app/staticfiles  # This gets populated at runtime
+    depends_on:
+      - db
+    env_file:
+     - .env
+    
+  # collectstatic:
+  #   build: .
+  #   command: python manage.py collectstatic --noinput
+  #   volumes:
+  #     - ./static:/app/staticfiles
+  #   depends_on:
+  #     - db
+  
+  db:
+    image: postgres:17
+    container_name: postgres-container
+    ports:
+      - 5433:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./static:/static:ro  # Matches alias /static/ in nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web-app
+
+volumes:
+  postgres_data:
+     

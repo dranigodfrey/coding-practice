@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Welcome to Docker World!</h1>
+<h4>Docker Users</h4>
+<table>
+    <thead>
+        <th>No</th>
+        <th>Username</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
